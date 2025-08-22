@@ -1,0 +1,160 @@
+/* General Body and Container Styling */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 540px;
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* To-Do App and Title */
+.todo-app {
+    padding: 20px;
+}
+
+.app-title {
+    color: #4b6cb7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Input Section */
+.input-section {
+    display: flex;
+    align-items: center;
+    background: #f1f3f5;
+    border-radius: 30px;
+    padding: 5px 20px;
+    margin-bottom: 25px;
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 12px;
+    font-size: 16px;
+    color: #555;
+}
+
+button {
+    border: none;
+    outline: none;
+    padding: 12px 30px;
+    background: #4b6cb7;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #184196;
+    transform: translateY(-2px);
+}
+
+/* List Items */
+#list-container {
+    list-style: none;
+}
+
+ul li {
+    font-size: 17px;
+    padding: 12px 8px 12px 40px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.3s ease;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+ul li:hover {
+    background: #f1f3f5;
+}
+
+/* Checkmark and Delete Icon */
+ul li::before {
+    content: '\f111'; /* Unicode for circle icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 400;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+ul li.checked {
+    color: #999;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    content: '\f058'; /* Unicode for checked circle icon */
+    font-weight: 900;
+    color: #28a745;
+}
+
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    color: #aaa;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+ul li span:hover {
+    background: #e9ecef;
+    color: #dc3545;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 15px;
+    }
+
+    button {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .input-section {
+        padding: 5px 15px;
+    }
+}
